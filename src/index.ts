@@ -25,7 +25,7 @@ const buildBody = (request: http.IncomingMessage) => {
   let body = {};
 
   try {
-    body = JSON.parse(stringifiedBodyData);
+    body = stringifiedBodyData ? JSON.parse(stringifiedBodyData) : {};
 
     return body;
   } catch (e) {
@@ -40,40 +40,35 @@ const serverInstance = http.createServer((request, response) => {
 
   const route = routes.find((route) => url?.startsWith(route.path));
 
-  if (!route) {
-    response.statusCode = 404;
-    response.setHeader("Content-Type", "application/json");
+  if (route) {
+    const body = buildBody(request);
 
-    response.end(JSON.stringify({ message: "Not found" }));
+    route.routes.execute(
+      {
+        body,
+        headers: request.headers,
+        method: method as HTTPMethod,
+        queryParams: queryString.decode(url?.split("?")[1] || ""),
+      },
+      {
+        setBody: (params) => {
+          response.setHeader("Content-Type", "application/json");
+          response.write(JSON.stringify(params));
+          response.end();
+        },
+        setStatus: (status) => {
+          response.statusCode = status;
+        },
+        setHeaders: (params) => {
+          Object.keys(params).forEach((key) => {
+            response.setHeader(key, params[key]);
+          });
+        },
+      }
+    );
 
     return;
   }
-
-  const body = buildBody(request);
-
-  route.routes.execute(
-    {
-      body,
-      headers: request.headers,
-      method: method as HTTPMethod,
-      queryParams: queryString.decode(url?.split("?")[1] || ""),
-    },
-    {
-      setBody: (params) => {
-        response.setHeader("Content-Type", "application/json");
-        response.write(JSON.stringify(params));
-        response.end();
-      },
-      setStatus: (status) => {
-        response.statusCode = status;
-      },
-      setHeaders: (params) => {
-        Object.keys(params).forEach((key) => {
-          response.setHeader(key, params[key]);
-        });
-      },
-    }
-  );
 
   response.statusCode = 200;
   response.setHeader("Content-Type", "application/json");
