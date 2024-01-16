@@ -1,0 +1,24 @@
+{
+  "name": "wouldyourather",
+  "version": "0.0.1",
+  "description": "would you rather app",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.2",
+    "@types/uuid": "^9.0.7",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.1"
+  }
+}
