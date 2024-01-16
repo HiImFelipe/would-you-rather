@@ -3,7 +3,7 @@ import queryString from "node:querystring";
 import "dotenv/config";
 
 import routes from "./routes/index.js";
-import { HTTPMethod } from "./helpers/contracts.js";
+import { HTTPMethod } from "./helpers/index.js";
 
 const host = process.env.HOST || "127.0.0.1";
 const port = Number(process.env.PORT) || 3000;
