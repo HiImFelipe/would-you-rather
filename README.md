@@ -24,7 +24,7 @@ It makes usage of DDD concepts but nothing super-extra fancy. SOLID principles a
 1. I have never injected class dependencies by hand as well, and it is something I am willing to learn.
 1. Improving the organization of the project overall.
 
-## Running the project
+## Running the project 🏃
 
 ### Prerequisites
 
@@ -38,7 +38,7 @@ This project is compatible with yarn and pnpm, but it was done with npm in mind.
 npm install
 ```
 
-### Running the project
+### Running
 
 ```bash
 npm run start
