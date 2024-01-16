@@ -20,19 +20,19 @@ It makes usage of DDD concepts but nothing super-extra fancy. SOLID principles a
 
 ## Challenges 🎯
 
-Pretty much the first time routing things by hand instead of making usage of something fancier like express or fastify.
-
-I have also pretty much never injected class dependencies by hand as well, and it is something I am willing to learn, so that is why it's a little confusing and not super polished at the time.
+1. First time routing things by hand instead of making usage of something fancier like express or fastify.
+1. I have never injected class dependencies by hand as well, and it is something I am willing to learn.
+1. Improving the organization of the project overall.
 
 ## Running the project
 
-### Prerequisites 
+### Prerequisites
 
 - Node v20.11 or above (Cannot guarantee lower versions will work, but you can try)
 
 ### Installing Dependencies
 
-You can run the project with any package manager you want, but this project relies on npm alone. Run the following to download the project's dependencies:
+This project is compatible with yarn and pnpm, but it was done with npm in mind. With that said, the following command will install the dependencies for you.
 
 ```bash
 npm install
@@ -40,14 +40,16 @@ npm install
 
 ### Running the project
 
-You may experience problems running the project as it is still in development and it's not ready for general-purpose usage. But if you wish to try or fixing problems on your own, run the following:
-
 ```bash
 npm run start
 ```
 
-If you don't wish to compile the typescript and you wish to simply run the app to see changes quickly, run the following:
+Or if you don't wish to compile the TS stuff and just run:
 
 ```bash
 npm run dev
 ```
+
+<p align="right">
+    <sub>* You may experience problems running the project as it is still in development.</sub>
+</p>
