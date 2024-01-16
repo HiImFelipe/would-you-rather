@@ -1,4 +1,4 @@
-import {
+import type {
   HTTPRequest,
   HTTPResponse,
   IHTTPRoutes,

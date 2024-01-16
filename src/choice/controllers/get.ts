@@ -1,4 +1,4 @@
-import { IChoicesService } from "../index.js";
+import type { IChoicesService } from "../index.js";
 
 export class GetChoiceController {
   constructor(private readonly choiceService: IChoicesService) {}

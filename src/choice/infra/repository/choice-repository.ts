@@ -1,5 +1,5 @@
-import { Choice } from "../../domain/choice.js";
-import { GetChoiceRepositoryParams } from "../../domain/contracts.js";
+import type { GetChoiceRepositoryParams } from "../../domain/contracts.js";
+import type { Choice } from "../../domain/choice.js";
 
 export class ChoiceRepository {
   private choices: Array<Choice> = [];

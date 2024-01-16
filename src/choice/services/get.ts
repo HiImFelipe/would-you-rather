@@ -1,5 +1,5 @@
-import { Choice } from "../domain/choice.js";
-import { IChoiceRepository } from "../domain/contracts.js";
+import type { IChoiceRepository } from "../domain/contracts.js";
+import type { Choice } from "../domain/choice.js";
 
 export type GetChoicesServiceParams = {
   page?: number;
