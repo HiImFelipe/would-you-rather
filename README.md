@@ -40,11 +40,13 @@ npm install
 
 ### Running
 
+If you wish to compile the TypeScript code
+
 ```bash
 npm run start
 ```
 
-Or if you don't wish to compile the TS stuff and just run:
+Or if you don't feel like doing so
 
 ```bash
 npm run dev
